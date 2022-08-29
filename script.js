@@ -10,9 +10,21 @@ const cumputerGuesses=(userGuess , computerGuess , secretNumber)=>{
     if(Math.abs(secretNumber-userGuess) < Math.abs(secretNumber-computerGuess)){
         return true;
     }else if(secretNumber-userGuess===secretNumber-computerGuess){
-        return true;
+        return true;  
     }else{
         return false;
     }
 } 
-console.log(cumputerGuesses())
+
+const updateScore = (winner)=>{
+    if(winner==='human'){
+        humanScore+=1;
+    }else if(winner==='computer'){
+        computerScore+=1;
+    }
+}
+
+const advanceRound = ()=>{
+    currentRoundNumber+=1;
+}
+advanceRound()
